@@ -2,7 +2,8 @@ import random, sys
 
 class Mastermind:
     def __init__(self):
-        print("Welcome to Emotional Damage Mastermind Game. Prepare for imminent defeat! Good luck, I guess.")
+        print("Welcome to an annoying Mastermind Game. Prepare for imminent defeat! Good luck, I guess.")
+        print("Feeling a bit overwhelmed, huh? If you can't handle the challenge, just type 'gu' and wave the white flag. Don't worry; I won't judge... well, maybe just a little bit. Hehe~")
         self.__numbers = range(1, 9) #tuple(range(int(input("Enter an amount of numbers: "))))
         self.__answer_amount = 4#int(input("Enter answer amount: "))
         # self.__number_tries = int(input("Enter number of tries: "))
@@ -20,6 +21,8 @@ class Mastermind:
     def __get_input(self):
         while True:
             user_guess = input("What is your guess?: ")
+            if user_guess == "gu":
+                self.end_game()
             _list = [i for i in user_guess]
             if len(_list) != self.__answer_amount:
                 print(f"Did you forget how to type? Please enter a valid input this time, unless you enjoy embarrassing yourself. (you can only enter {self.__answer_amount} slots)")
